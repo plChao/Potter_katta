@@ -1,7 +1,9 @@
-from itertools import combinations
+from collections import Counter
 class Potter:
     def pick_combination(self, basket, books_num):
-        return list(set(basket))[:books_num]
+        cnt = Counter(basket)
+        books_order_by_cnt = [ item[0] for item in cnt.most_common()]
+        return books_order_by_cnt[:books_num]
     def remove_books_from_basket(self, basket, books):
         for b in books:
             basket.remove(b)
