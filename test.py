@@ -26,7 +26,9 @@ class TestPotter(unittest.TestCase):
         assert (8 + (8 * 5 * 0.75) == self.test_object.price([0, 1, 1, 2, 3, 4]))
     def testEdgeCases1(self):
         assert (2 * (8 * 4 * 0.8) == self.test_object.price([0, 0, 1, 1, 2, 2, 3, 4]))
-    def testEdgeCases2(self):    
+    def testEdgeCases2(self):
+        assert (2 * (8 * 4 * 0.8) == self.test_object.price([0, 1, 2, 2, 3, 3, 4, 4]))    
+    def testEdgeCases3(self):    
         assert (3 * (8 * 5 * 0.75) + 2 * (8 * 4 * 0.8) ==  
         self.test_object.price([0, 0, 0, 0, 0, 
             1, 1, 1, 1, 1, 
